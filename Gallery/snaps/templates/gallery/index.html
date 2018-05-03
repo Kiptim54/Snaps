@@ -3,4 +3,11 @@
 
 {% block content%}
 <h1 class="text-center">Photos</h1>
+{% for photo in photos %}
+
+{{photo.Image_name}}
+{{photo.Image_description}}
+ <img src="{{photo.Image_url.url}}" class="img-responsive" alt="Screenshot"> 
+ {{photo.Image_url.url}}
+{% endfor %}
 {%endblock %}
