@@ -16,6 +16,10 @@ class PhotoTestClass(TestCase):
         self.new_photo.save_photo()
         photos= Photo.objects.all()
         self.assertTrue(len(photos)>0)
+
+    def test_deletephoto(self):
+        
+
     
     def tearDown(self):
         Photo.objects.all().delete()

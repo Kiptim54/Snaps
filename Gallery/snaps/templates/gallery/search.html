@@ -1,0 +1,21 @@
+{% extends 'gallery/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        
+        {% if category %}
+        <h2>Found {{category | length}} in {{message}}</h2>
+        {% else %}
+        <h2>0 results</h2>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if category %}
+        {% for photo in category %}
+        {{photo.Image_name}}
+        {% endfor %}
+        {%endif%}
+        
+    </div>
+</div>
+{% endblock %}
