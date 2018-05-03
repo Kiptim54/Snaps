@@ -3,11 +3,20 @@
 
 {% block content%}
 <h1 class="text-center">Photos</h1>
-{% for photo in photos %}
 
-{{photo.Image_name}}
-{{photo.Image_description}}
- <img src="{{photo.Image_url.url}}" class="img-responsive" alt="Screenshot"> 
- {{photo.Image_url.url}}
-{% endfor %}
+<div class="container">
+    <div class="row">
+            {% for photo in photos %}
+        <div class="col-md-4">
+            <h1>{{photo.Image_name}}</h1>
+             <a href="{{photo.Image_url.url}}"> <img src="{{photo.Image_url.url}}" class="img-responsive" alt="Screenshot"></a>
+             <p>{{photo.Image_description}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+ 
+
 {%endblock %}
