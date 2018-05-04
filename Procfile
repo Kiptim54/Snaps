@@ -1,1 +1,1 @@
-web: gunicorn​ ​ project_name(myproject) ​ .wsgi​
+web: gunicorn snaps54.wsgi
