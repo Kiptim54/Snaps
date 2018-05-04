@@ -18,7 +18,7 @@ class Location(models.Model):
         return self.name
 
 class Photo(models.Model):
-    Image_name= models.CharField(max_length=30)
+    title= models.CharField(max_length=30)
     Image_description=models.CharField(max_length=200)
     Image_url=models.ImageField(upload_to='articles/')
     source=models.CharField(max_length=20)
@@ -39,7 +39,7 @@ class Photo(models.Model):
     def search_photo(cls, search_photos):
         found_photo= cls.objects.filter(image_category__name__icontains=search_photos)
         print(found_photo)
-        print('hello')
+        print('hello from models')
         return found_photo
 
     

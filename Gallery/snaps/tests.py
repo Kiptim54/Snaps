@@ -17,7 +17,7 @@ class PhotoTestClass(TestCase):
         photos= Photo.objects.all()
         self.assertTrue(len(photos)>0)
 
-    def test_deletephoto(self):
+    
         
 
     

@@ -14,7 +14,7 @@ def search_photos(request):
         searched_photos = request.GET.get('category')
         searched_category= Photo.search_photo(search_photos)
         message= f'{searched_photos}'
-        print(searched_category)
+        print(searched_category, searched_photos)
         title="Snaps | search"
         return render(request,'gallery/search.html', {"title":title, "message": message, "category":searched_category})
     else:
