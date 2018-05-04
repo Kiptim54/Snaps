@@ -1,1 +1,1 @@
-web: gunicorn snaps54.wsgi.py
+web: gunicorn snaps54.wsgi
