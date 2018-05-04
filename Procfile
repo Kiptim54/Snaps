@@ -1,1 +1,1 @@
-web: gunicorn snaps54.wsgi
+web: gunicorn Gallery.wsgi
