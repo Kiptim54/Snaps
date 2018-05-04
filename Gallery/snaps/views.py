@@ -11,10 +11,10 @@ def index(request):
 
 def search_photos(request):
     if 'category' in request.GET and request.GET["category"]:
-        searched_photos = request.GET.get('category')
-        searched_category= Photo.search_photo(search_photos)
-        message= f'{searched_photos}'
-        print(searched_category, searched_photos)
+        search_term = request.GET.get('category')
+        searched_category = Photo.search_photo(search_term)
+        message= f'{search_term}'
+        print(searched_category)
         title="Snaps | search"
         return render(request,'gallery/search.html', {"title":title, "message": message, "category":searched_category})
     else:

@@ -11,12 +11,14 @@
             <h1>{{photo.Image_name}}</h1>
              <a href="{{photo.Image_url.url}}"> <img src="{{photo.Image_url.url}}" class="img-responsive" alt="Screenshot"></a>
              <p>{{photo.Image_description}}</p>
+             <p>Category:{{photo.image_category}}</p>
+             <p>Location:{{photo.image_location}}</p>
         </div>
         {% endfor %}
     </div>
 </div>
 
 
- 
+
 
 {%endblock %}
