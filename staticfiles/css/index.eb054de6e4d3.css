@@ -1,0 +1,62 @@
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 12px;
+}
+.categories{
+    border:1px black solid;
+    display:inline-block;
+    padding-left:6px;
+    padding-right:6px;
+    margin:2%;
+    border-radius:10%;
+    box-shadow: 5px 5px 5px #888888;
+    margin-left:14%;
+    
+
+}
+.category p{
+    border:1px black solid;
+    display:inline-block;
+    padding-left:6px;
+    padding-right:6px;
+    margin:2%;
+    border-radius:10%;
+    box-shadow: 5px 5px 5px #888888;
+}
+.photo{
+    border:grey .5px solid;
+    margin:1%;
+    border-radius:3%;
+    padding-top:-15%;
+    box-shadow: 5px 10px 10px #888888;
+    display:inline-block;
+
+}
+#modalfood{
+    position: absolute;
+    top:45%;
+}
+#header{
+background-image:url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/3667915/1820/1213/m1/fpnw/wm1/nmzbxenrvudgiuql2gecymrkchyewfixbljlnhzfmcee5aog6m0o0146ltenmjts-.jpg?1512111126&s=a0f29bafb9e6269216b2d15c0786bdb0");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+color:white;
+height:60vh;
+margin-top:1em;
+
+margin:-15px;
+padding:9%;
+
+
+}
+#title{
+    position: absolute;
+    top:75%;
+    left:42%;
+    color:black;
+}
+#logo{
+    border:1.5px dotted black;
+    padding:4px;
+}
