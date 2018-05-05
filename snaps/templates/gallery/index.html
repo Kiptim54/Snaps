@@ -1,40 +1,118 @@
-{% extends 'gallery/base.html' %}
-{% load bootstrap3 %}
-{% load static %}
-
-{% block content%}
-{% block styles %}
-{{super}}
+{% extends 'gallery/base.html' %} 
+{% load bootstrap3 %} {% load static %} 
+{% block content%} 
+{% block styles %} 
+{{block.super}}
 {% bootstrap_css %}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
-{% endblock %}
-
-<h1 class="text-center">Photos</h1>
-
-<div class="container">
-    {% for category in categories %}
-    <div class="categories "class="text-center">
-            <h5>{{category.name}}</h5>
-    </div>
-    
-    {%endfor %}
-    <div class="row">
-            {% for photo in photos %}
-        <div class="col-md-4">
-            <div class="photo">
-                <h1>{{photo.Image_name}}</h1>
-                <a href="{{photo.Image_url.url}}"> <img src="{{photo.Image_url.url}}" class="img-responsive" alt="Screenshot"></a>
-                <p>{{photo.Image_description}}</p>
-                <p>Category:{{photo.image_category}}</p>
-                <p>Location:{{photo.image_location}}</p>
+<link rel="stylesheet" href="{% static 'css/index.css' %}"> {% endblock %}
+<div class="container-fluid">
+    <duv class="row">
+        <div class="col-md-12">
+            <div id="header">
+                <div id="title">
+                    <h1 class="text-center" id="logo" >Snaps Gallery</h1>
+                    <!-- <h5>All your meals in one place</h5> -->
+                </div>
             </div>
-           
+                
         </div>
-        {% endfor %}
-    </div>
+    </duv>
 </div>
 
 
 
+<div class="container">
+    {% for location in locations %}
+    <div class="categories " class="text-center">
+        <h5>{{location.name}}</h5>
+    </div>
 
-{%endblock %}
+    {%endfor %}
+    <div class="container-fluid">
+
+
+        <div class="row">
+
+            {% for photo in photos %}
+            <div class="col-md-4">
+                <div class="photo">
+                    <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button data-toggle="modal" data-target="#exampleModalCenter">See more</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="zeroclipboard/dist/ZeroClipboard.js"></script>
+ 
+<button id="my-button" data-clipboard-text="{{photo.Image_url.url}}" >Copy to Clipboard</button>
+<br/><br/>
+<textarea placeholder='Paste here'></textarea>
+
+<script language="JavaScript">
+
+ZeroClipboard.config( { swfPath: "zeroclipboard/dist/ZeroClipboard.swf" } );
+
+// Initialize ZeroClipboard Object
+var client = new ZeroClipboard( $("button#my-button") );
+ 
+</script> -->
+
+
+
+
+        {%endblock %}

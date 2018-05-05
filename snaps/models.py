@@ -1,5 +1,5 @@
 from django.db import models
-
+import pyperclip
 
 # Create your models here.
 class Category(models.Model):
@@ -19,6 +19,18 @@ class Category(models.Model):
 
 class Location(models.Model):
     name= models.CharField(max_length=100)
+
+    def save_location(self):
+        self.save()
+
+    @classmethod
+    def display_locations(cls):
+        locations=cls.objects.all()
+        return locations
+    
+        
+    
+
     
 
 
@@ -32,6 +44,7 @@ class Photo(models.Model):
     source=models.CharField(max_length=20)
     image_category=models.ForeignKey(Category)
     image_location=models.ForeignKey(Location)
+
 
 
     def __str__(self):
@@ -53,10 +66,19 @@ class Photo(models.Model):
     def search_photo(cls, search_photos):
         found_photo= cls.objects.filter(image_category__name__icontains=search_photos)
         return found_photo
+
+    @classmethod
+    def save_url(self):
+        url= self.objects.add(Image_url="hello")
+        copy=pyperclip.copy(url)
+        print(copy)
+        return copy
    
+    @classmethod
+    def image_bylocation(cls, image_location):
+       location=cls.objects.filter(image_location__name=image_location)
+       return location
     
-
-
 
 
 
