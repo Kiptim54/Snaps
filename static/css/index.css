@@ -1,0 +1,17 @@
+.categories{
+    border:1px black solid;
+    display:inline-block;
+    padding-left:6px;
+    padding-right:6px;
+    margin:2%;
+    border-radius:10%;
+    /* background-color:#BDD852; */
+
+}
+.photo{
+    border:grey 2px solid;
+    margin:2%;
+    padding:2%;
+    border-radius:5%;
+    box-shadow: 5px 10px #888888;
+}

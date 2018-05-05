@@ -7,6 +7,11 @@ class Category(models.Model):
 
     def save_category(self):
         self.save()
+    @classmethod
+    def display_categories(cls):
+        categories=Category.objects.all()
+        return categories
+
 
 
     def __str__(self):

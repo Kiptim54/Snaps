@@ -6,8 +6,9 @@ from .models import Photo, Category, Location
 def index(request):
     title="Snaps | Home"
     photos= Photo.display_photos()
+    categories=Category.display_categories()
     return render(request, 
-    'gallery/index.html', {"title": title, "photos":photos})
+    'gallery/index.html', {"title": title, "photos":photos, "categories":categories})
 
 def search_photos(request):
     if 'category' in request.GET and request.GET["category"]:

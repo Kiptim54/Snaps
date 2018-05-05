@@ -1,18 +1,34 @@
 {% extends 'gallery/base.html' %}
-
+{% load bootstrap3 %}
+{% load static %}
 
 {% block content%}
+{% block styles %}
+{{super}}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
 <h1 class="text-center">Photos</h1>
 
 <div class="container">
+    {% for category in categories %}
+    <div class="categories "class="text-center">
+            <h5>{{category.name}}</h5>
+    </div>
+    
+    {%endfor %}
     <div class="row">
             {% for photo in photos %}
         <div class="col-md-4">
-            <h1>{{photo.Image_name}}</h1>
-             <a href="{{photo.Image_url.url}}"> <img src="{{photo.Image_url.url}}" class="img-responsive" alt="Screenshot"></a>
-             <p>{{photo.Image_description}}</p>
-             <p>Category:{{photo.image_category}}</p>
-             <p>Location:{{photo.image_location}}</p>
+            <div class="photo">
+                <h1>{{photo.Image_name}}</h1>
+                <a href="{{photo.Image_url.url}}"> <img src="{{photo.Image_url.url}}" class="img-responsive" alt="Screenshot"></a>
+                <p>{{photo.Image_description}}</p>
+                <p>Category:{{photo.image_category}}</p>
+                <p>Location:{{photo.image_location}}</p>
+            </div>
+           
         </div>
         {% endfor %}
     </div>
