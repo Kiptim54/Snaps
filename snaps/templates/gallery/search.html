@@ -20,7 +20,7 @@
                     {% for photo in category %}
               <div class="col-md-4">
                       <image src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter">
-                          <button data-toggle="modal" data-target="#exampleModalCenter">See more</button>
+                          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">see photo details</button>
     
                               <!-- Modal -->
                               <div id="modalfood"class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
