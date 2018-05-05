@@ -19,11 +19,11 @@
                 {% if category %}
                     {% for photo in category %}
               <div class="col-md-4">
-                      <image src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter">
-                          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">see photo details</button>
+                      <image src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter"/>
+                          <!-- <button data-toggle="modal" data-target="#exampleModalCenter">See more</button> -->
     
                               <!-- Modal -->
-                              <div id="modalfood"class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
@@ -42,7 +42,20 @@
                                   </div>
                                 </div>
                                 </div>
-                     
+                                
+                                  
+                                          
+                          
+                                
+                    <!-- {{photo.title}}
+                    <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive">
+                    <i><h5>{{photo.Image_description}}</h5></i>
+                    Category: {{photo.image_location}}
+                    Location:{{photo.image_category}} -->
+            
+                  
+           
+            
             </div>
             {% endfor %}
             {%endif%}
