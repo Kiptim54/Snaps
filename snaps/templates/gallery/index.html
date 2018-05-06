@@ -2,7 +2,7 @@
 {% bootstrap_css %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}"> {% endblock %}
 <div class="container-fluid">
-    <duv class="row">
+    <div class="row">
         <div class="col-md-12">
             <div id="header">
                 <div id="title">
@@ -12,73 +12,66 @@
             </div>
 
         </div>
-    </duv>
-</div>
-
-
-
-<div class="container">
-    {% for location in locations %}
-    <div class="categories " class="text-center">
-        
-        <form role="search" action="{% url 'locationPhoto'%}">
-
-            <input type="submit" class="form-control" placeholder="Search category" name="location" value="{{location.name}}">
-
-        </form>
-
     </div>
 
-    {%endfor %}
-    <div class="container-fluid">
 
 
-        <div class="row">
 
-            {% for photo in photos %}
-            <div class="col-md-4">
-                <div class="photo">
-                    <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter">
-                    <button class="btn" data-clipboard-text="http://127.0.0.1:8000{{photo.Image_url.url}}">
-                        Copy photo url
-                    </button>
+    <div class="container">
+        {% for location in locations %}
+        <div class="categories " class="text-center">
 
-                    <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">see photo details</button> -->
+            <form role="search" action="{% url 'locationPhoto'%}">
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <!-- <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h5>
-                                   
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div> -->
-                                <div class="modal-body">
-                                    <img id="modalimg" src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive">
-                                    <h3 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h3>
-                                    <h5>{{photo.Image_description}}</h5>
-                                    <div class="category">
-                                        <p> {{photo.image_location}} </p>
-                                        <p>{{photo.image_category}}</p>
+                <input type="submit" class="form-control" placeholder="Search category" name="location" value="{{location.name}}">
+
+            </form>
+
+        </div>
+
+        {%endfor %}
+        <div class="container-fluid">
+
+
+            <div class="row">
+
+                {% for photo in photos %}
+                <div class="col-md-4">
+                    <div class="photo">
+                        <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button class="btn" data-clipboard-text="http://127.0.0.1:8000{{photo.Image_url.url}}">
+                            Copy photo url
+                        </button>
+
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img id="modalimg" src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive">
+                                        <h3 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h3>
+                                        <h5>{{photo.Image_description}}</h5>
+                                        <div class="category">
+                                            <p> {{photo.image_location}} </p>
+                                            <p>{{photo.image_category}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
+                                    <div class="modal-footer">
 
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+
+                {% endfor %}
 
             </div>
 
-            {% endfor %}
-
         </div>
+
 
         {%endblock %}
