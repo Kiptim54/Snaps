@@ -19,6 +19,9 @@
         <div class="col-md-4">
             <image src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter"
             />
+            <button class="btn" data-clipboard-text="http://127.0.0.1:8000{{photo.Image_url.url}}">
+                Copy photo url
+            </button>
             <!-- <button data-toggle="modal" data-target="#exampleModalCenter">See more</button> -->
 
             <!-- Modal -->
@@ -33,7 +36,8 @@
                                               </button>
                                           </div> -->
                         <div class="modal-body">
-                            <img id="modalimg" src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive">
+                                <img  src=""
+                                class="showimage" class="img-responsive"alt="Image">
                             <h3 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h3>
                             <h5>{{photo.Image_description}}</h5>
                             <div class="location">

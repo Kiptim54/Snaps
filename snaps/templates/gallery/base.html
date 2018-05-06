@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="jquery.simple-popup.css" rel="stylesheet" type="text/css" />
     {% if title %}
     <title>{{title}}</title>
     {%else %}
@@ -42,6 +43,23 @@ clipboard.on('error', function(e) {
     console.log(e);
 });
 </script>
+ <script src="jquery.js"></script> 
+ <script src="jquery.simple-popup.min.js"></script> 
+ <script>
+ $(document).ready(function () {
+    $('img').on('click', function () {
+        var image = $(this).attr('src');
+        //alert(image);
+        $('#exampleModalCenter').on('show.bs.modal', function () {
+            $(".showimage").attr("src", image);
+        
+        });
+    });
+});
+
+ </script>
+
+
 
 
 {% endblock %}

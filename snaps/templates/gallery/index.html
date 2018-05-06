@@ -34,40 +34,41 @@
 
 
             <div class="row">
-
-                {% for photo in photos %}
-                <div class="col-md-4">
-                    <div class="photo">
-                        <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter">
-                        <button class="btn" data-clipboard-text="http://127.0.0.1:8000{{photo.Image_url.url}}">
-                            Copy photo url
-                        </button>
-
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <img id="modalimg" src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive">
-                                        <h3 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h3>
-                                        <h5>{{photo.Image_description}}</h5>
-                                        <div class="category">
-                                            <p> {{photo.image_location}} </p>
-                                            <p>{{photo.image_category}}</p>
+                    {% for photo in photos %}
+                    <div class="col-md-4">
+                        <div class="photo">
+                            <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button class="btn" data-clipboard-text="http://127.0.0.1:8000{{photo.Image_url.url}}">
+                                Copy photo url
+                            </button>
+                    
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                                <img  src=""
+                                                class="showimage" class="img-responsive"alt="Image">
+                                            <h3 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h3>
+                                            <h5>{{photo.Image_description}}</h5>
+                                            <div class="category">
+                                                <p> {{photo.image_location}} </p>
+                                                <p>{{photo.image_category}}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+                                        <div class="modal-footer">
+        
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+        
                     </div>
-
-                </div>
-
-                {% endfor %}
+        
+                    {% endfor %}
+        
 
             </div>
 
