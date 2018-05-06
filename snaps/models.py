@@ -63,21 +63,16 @@ class Photo(models.Model):
         return photos
 
     @classmethod
-    def search_photo(cls, search_photos):
+    def search_photo(cls,search_photos):
         found_photo= cls.objects.filter(image_category__name__icontains=search_photos)
         return found_photo
 
     @classmethod
-    def save_url(self):
-        url= self.objects.add(Image_url="hello")
-        copy=pyperclip.copy(url)
-        print(copy)
-        return copy
+    def search_location(cls,search_locs):
+        found_location= cls.objects.filter(image_location__name__icontains=search_locs)
+        return found_location
    
-    @classmethod
-    def image_bylocation(cls, image_location):
-       location=cls.objects.filter(image_location__name=image_location)
-       return location
+   
     
 
 

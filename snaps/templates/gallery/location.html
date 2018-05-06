@@ -1,1 +1,70 @@
-hello
+ {% extends 'gallery/base.html' %} {% block content %}
+<div class="container">
+
+    <div class="row">
+
+        {% if location %}
+        <h2>Found {{location | length}} in {{message}}</h2>
+        {% else %}
+        <h2>Sorry, nothing found on {{message}}</h2>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container">
+
+
+    <div class="row">
+        {% if location %} {% for photo in location %}
+        <div class="col-md-4">
+            <image src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter"
+            />
+            <!-- <button data-toggle="modal" data-target="#exampleModalCenter">See more</button> -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h5>
+                                             
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                              </button>
+                                          </div> -->
+                        <div class="modal-body">
+                            <img id="modalimg" src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive">
+                            <h3 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h3>
+                            <h5>{{photo.Image_description}}</h5>
+                            <div class="location">
+                                <p> {{photo.image_location}} </p>
+                                <p>{{photo.image_location}}</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- {{photo.title}}
+                    <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive">
+                    <i><h5>{{photo.Image_description}}</h5></i>
+                    location: {{photo.image_location}}
+                    Location:{{photo.image_location}} -->
+
+
+
+
+        </div>
+        {% endfor %} {%endif%}
+    </div>
+
+    Button trigger modal {% endblock %}

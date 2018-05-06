@@ -23,9 +23,21 @@ def search_photos(request):
         message="You haven't searched for any term"
         return render(request, 'gallery/search.html', {"message":message,"title":title})
 
-def filter_location(request,location):
-    location=Photo.objects.filter(image_location__name=location)
-    return render(request, 'gallery/location.html')
+    
+def search_location(request):
+    if 'location' in request.GET and request.GET["location"]:
+        search_locs = request.GET.get('location')
+        searched_location = Photo.search_location(search_locs)
+        message= f'{search_locs}'
+        print(searched_location)
+        title="Snaps | search"
+        return render(request,'gallery/location.html', {"title":title, "message": message, "location":searched_location})
+    else:
+        title="Snaps | search "
+        message="You haven't searched for any term"
+        return render(request, 'gallery/location.html', {"message":message,"title":title})
+
+
 
 
     
