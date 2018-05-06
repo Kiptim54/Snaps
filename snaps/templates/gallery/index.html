@@ -33,6 +33,9 @@
             <div class="col-md-4">
                 <div class="photo">
                     <img src="{{photo.Image_url.url}}" alt="searched photo {{message}}" class="img-responsive" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button class="btn" data-clipboard-text="http://127.0.0.1:8000{{photo.Image_url.url}}">
+                        Copy photo url
+                    </button>
 
                     <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">see photo details</button> -->
 
@@ -52,8 +55,8 @@
                                     <h3 class="modal-title" id="exampleModalLongTitle">{{photo.title}}</h3>
                                     <h5>{{photo.Image_description}}</h5>
                                     <div class="category">
-                                       <p> {{photo.image_location}} </p>
-                                       <p>{{photo.image_category}}</p> 
+                                        <p> {{photo.image_location}} </p>
+                                        <p>{{photo.image_category}}</p>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -67,57 +70,9 @@
                 </div>
 
             </div>
+            
             {% endfor %}
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript" src="zeroclipboard/dist/ZeroClipboard.js"></script>
- 
-<button id="my-button" data-clipboard-text="{{photo.Image_url.url}}" >Copy to Clipboard</button>
-<br/><br/>
-<textarea placeholder='Paste here'></textarea>
-
-<script language="JavaScript">
-
-ZeroClipboard.config( { swfPath: "zeroclipboard/dist/ZeroClipboard.swf" } );
-
-// Initialize ZeroClipboard Object
-var client = new ZeroClipboard( $("button#my-button") );
- 
-</script> -->
-
-
-
-
+      
         {%endblock %}
