@@ -1,6 +1,6 @@
 # Snaps Gallery| Brenda Kiptim
 
->This is a Personal Blog built using Flask and Postgress.
+>This is a Gallery application built using Django and Postgress.
 
 ## SPECS
 
